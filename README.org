@@ -26,5 +26,11 @@ $ git clone https://github.com/informatimago/examples.git
 
 And read the source, =examples/rdp-lexer/example.lisp=
 
+** usocket-client-server
 
+This was =informatimago/test-client-server= previously.
+
+Moved it in as an example of a client and server using =usocket=.
+
+See =usocket-client-server/README.org=.
 

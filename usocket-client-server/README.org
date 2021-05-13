@@ -1,0 +1,35 @@
+# -*- mode:org;coding:utf-8 -*-
+* Compilation
+
+#+BEGIN_SRC(bash)
+make clean all
+#+END_SRC
+
+The =Makefile= contains rules to build the client and the server using
+the CL implementations ccl, ecl, sbcl or clisp that are found on the
+system.  The following executables may be built:
+
+#+BEGIN_SRC
+	client-lisp-ccl
+	server-lisp-ccl
+	client-lisp-ecl
+	server-lisp-ecl
+	client-lisp-sbcl
+	server-lisp-sbcl
+	client-lisp-clisp
+	server-lisp-clisp
+#+END_SRC
+
+* Execution
+
+Run a server in one terminal or emacs shell and a client in another.
+The socket address localhost:3270 is hardwired.
+
+For example:
+
+#+BEGIN_SRC
+xterm -e sudo tcpdump -n -X -vv -i lo0 port 3270 &
+sleep 1 ; xterm -e ./server-lisp-ccl &
+sleep 1 ; xterm -e ./client-lisp-ccl &
+#+END_SRC
+
